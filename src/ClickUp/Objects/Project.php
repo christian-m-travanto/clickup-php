@@ -152,7 +152,7 @@ class Project extends AbstractObject
 			$this,
 			$array['lists']
 		);
-		$this->overrideStatuses = isset($array['override_statuses']) ? $array['override_statuses'] : false;
+		$this->overrideStatuses = $array['override_statuses'] ?? false;
 		if (isset($array['override_statuses']) and $array['override_statuses']) {
 			$this->statuses = new StatusCollection(
 				$this->client(),

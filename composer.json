@@ -1,24 +1,37 @@
 {
     "name": "howyi/clickup-php",
     "description": "ClickUp API client (unofficial)",
-    "keywords": ["ClickUp", "click-up", "api"],
+    "keywords": [
+        "ClickUp",
+        "click-up",
+        "api"
+    ],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name":  "Hayashi Takuya",
+            "name": "Hayashi Takuya",
             "email": "qrbys@outlook.com"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.6",
+        "php": ">=8.2",
         "guzzlehttp/guzzle": "^6.3|^7.2"
     },
     "autoload": {
-      "psr-4": { "ClickUp\\": "src/ClickUp/" }
+        "psr-4": {
+            "ClickUp\\": "src/ClickUp/"
+        }
     },
     "require-dev": {
-        "psy/psysh": "^0.9.8"
+        "psy/psysh": "^0.9.8",
+        "rector/rector": "^2.0"
+    },
+    "scripts": {
+        "rector": [
+            "Composer\\Config::disableProcessTimeout",
+            "php ./vendor/bin/rector"
+        ]
     }
 }

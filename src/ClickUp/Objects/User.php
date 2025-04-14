@@ -70,6 +70,6 @@ class User extends AbstractObject
 		$this->username = $array['username'];
 		$this->color = $array['color'];
 		$this->profilePicture = $array['profilePicture'];
-		$this->initials = isset($array['initials']) ? $array['initials'] : null;
+		$this->initials = $array['initials'] ?? null;
 	}
 }

@@ -77,11 +77,8 @@ abstract class AbstractObjectCollection extends AbstractObject implements \Itera
 		return $this->objects ?? [];
 	}
 
-	/**
-	 * @return \ArrayIterator|\Traversable
-	 */
-	public function getIterator()
-	{
+	public function getIterator(): \Traversable
+    {
 		return $this->objects() ? new \ArrayIterator($this->objects()) : new \EmptyIterator();
 	}
 }

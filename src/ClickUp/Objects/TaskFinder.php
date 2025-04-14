@@ -9,12 +9,6 @@ use ClickUp\Client;
  */
 class TaskFinder
 {
-	/* @var Client $client */
-	private $client;
-
-	/* @var int $teamId */
-	private $teamId;
-
 	/* @var array $params */
 	private $params = [];
 
@@ -22,11 +16,9 @@ class TaskFinder
 	 * @param Client $client
 	 * @param int    $teamId
 	 */
-	public function __construct(Client $client, $teamId)
-	{
-		$this->client = $client;
-		$this->teamId = $teamId;
-	}
+	public function __construct(private readonly Client $client, private $teamId)
+    {
+    }
 
 	/**
 	 * @return TaskCollection

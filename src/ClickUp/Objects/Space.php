@@ -141,16 +141,16 @@ class Space extends AbstractObject
 			$array['statuses']
 		);
 		$this->clickApps = [
-			'multiple_assignees' => isset($array['multiple_assignees']) ? $array['multiple_assignees'] : false,
-			'due_dates' => isset($array['features']['due_dates']['enabled']) ? $array['features']['due_dates']['enabled'] : false,
-			'time_tracking' => isset($array['features']['time_tracking']['enabled']) ? $array['features']['time_tracking']['enabled'] : false,
-			'priorities' => isset($array['features']['priorities']['enabled']) ? $array['features']['priorities']['enabled'] : false,
-			'tags' => isset($array['features']['tags']['enabled']) ? $array['features']['tags']['enabled'] : false,
-			'time_estimates' => isset($array['features']['time_estimates']['enabled']) ? $array['features']['time_estimates']['enabled'] : false,
-			'check_unresolved' => isset($array['features']['check_unresolved']['enabled']) ? $array['features']['check_unresolved']['enabled'] : false,
-			'custom_fields' => isset($array['features']['custom_fields']['enabled']) ? $array['features']['custom_fields']['enabled'] : false,
-			'remap_dependencies' => isset($array['features']['remap_dependencies']['enabled']) ? $array['features']['remap_dependencies']['enabled'] : false,
-			'dependency_warning' => isset($array['features']['dependency_warning']['enabled']) ? $array['features']['dependency_warning']['enabled'] : false,
+			'multiple_assignees' => $array['multiple_assignees'] ?? false,
+			'due_dates' => $array['features']['due_dates']['enabled'] ?? false,
+			'time_tracking' => $array['features']['time_tracking']['enabled'] ?? false,
+			'priorities' => $array['features']['priorities']['enabled'] ?? false,
+			'tags' => $array['features']['tags']['enabled'] ?? false,
+			'time_estimates' => $array['features']['time_estimates']['enabled'] ?? false,
+			'check_unresolved' => $array['features']['check_unresolved']['enabled'] ?? false,
+			'custom_fields' => $array['features']['custom_fields']['enabled'] ?? false,
+			'remap_dependencies' => $array['features']['remap_dependencies']['enabled'] ?? false,
+			'dependency_warning' => $array['features']['dependency_warning']['enabled'] ?? false,
 		];
 	}
 }

@@ -316,8 +316,8 @@ class Task extends AbstractObject
 		$this->priority = $array['priority'];
 		$this->dueDate = $this->getDate($array, 'due_date');
 		$this->startDate = $this->getDate($array, 'start_date');
-		$this->points = isset($array['point']) ? $array['point'] : null;
-		$this->timeEstimate = isset($array['time_estimate']) ? $array['time_estimate'] : null;
+		$this->points = $array['point'] ?? null;
+		$this->timeEstimate = $array['time_estimate'] ?? null;
 		$this->taskListId = $array['list']['id'];
 		$this->projectId = $array['project']['id'];
 		$this->spaceId = $array['space']['id'];
