@@ -3,6 +3,7 @@
 namespace ClickUp;
 
 use ClickUp\Objects\TaskFinder;
+use ClickUp\Objects\TaskList;
 use ClickUp\Objects\Team;
 use ClickUp\Objects\TeamCollection;
 use ClickUp\Objects\User;
@@ -59,6 +60,14 @@ class Client
 			$this->get("team/$teamId")['team']
 		);
 	}
+
+    public function taskList(int $listId) : TaskList
+    {
+        return new TaskList(
+            $this,
+            $this->get("list/$listId")
+        );
+    }
 
 	/**
 	 * @param int $teamId
